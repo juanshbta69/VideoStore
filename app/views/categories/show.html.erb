@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @category.description %>
+</p>
+
+<p>
+	<b>Listing movies:</b><br /><br />
+	<% @category.movies.each do |movie| %>
+		<%= "Title: " + movie.title %>
+		<td><%= link_to 'Show', category_movie_path(@category, movie) %></td>
+		<% if(@current_user.role == "Administrator") %>
+			<td><%= link_to 'Edit', edit_category_movie_path(@category, movie) %></td>
+		<% end %>
+		<br />
+	<% end %>
+</p>
+
+<% if(@current_user.role == "Administrator") %>
+	<%= link_to 'Edit', edit_category_path(@category) %> |
+<% end %>
+<%= link_to 'Back', categories_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  film_director: MyString
+  description: MyText
+  cast: MyText
+  copy_number: 1
+  category: 
+
+two:
+  title: MyString
+  film_director: MyString
+  description: MyText
+  cast: MyText
+  copy_number: 1
+  category: 

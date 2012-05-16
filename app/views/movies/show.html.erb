@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <b>Film director:</b>
+  <%= @movie.film_director %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <b>Cast:</b>
+  <%= @movie.cast %>
+</p>
+
+<p>
+  <b>Copy number:</b>
+  <%= @movie.copy_number %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @movie.category.name %>
+</p>
+
+
+<% if(@current_user.role == "Administrator") %>
+	<%= link_to 'Edit', edit_category_movie_path(@category, @movie) %> |
+<% end %>
+<%= link_to 'Back', category_path(@category) %><br /><br />
